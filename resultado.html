@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Resultado</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Resultado</h1>
+    <div id="resultado">
+      <!-- O conteúdo será inserido aqui via JavaScript -->
+    </div>
+  </div>
+
+  <script>
+    // Função para obter os parâmetros da URL
+    function getParam(param) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(param);
+    }
+
+    // Obtém os valores de nome, emoção e emoji passados via GET
+    function getFormData() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const nome = urlParams.get('nome');
+      const emocao = urlParams.get('emocao');
+      const emoji = urlParams.get('emoji');
+      return {nome: nome, emocao:emocao, emoji:emoji}
+    }
+
+    // Exibe o resultado na página
+    window.onload = function() {
+      const {nome, emocao, emoji} = getFormData();
+      const resultadoDiv = document.getElementById("resultado");
+      resultadoDiv.innerHTML = `<p><strong>Nome:</strong> ${nome}</p><p><strong>Emoção:</strong> ${emocao} ${emoji}</p>`;
+    };
+  </script>
+</body>
+</html>
