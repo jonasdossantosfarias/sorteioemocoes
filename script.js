@@ -20,7 +20,15 @@ function mostrarEmocao() {
         emocao = "Raiva";
         emoji = "😠";
         break;
+        case "ELO":
+        emocao = "Raiva";
+        emoji = "😠";
+        break;
       case "ROSIANE":
+        emocao = "Nojo";
+        emoji = "🤢";
+        break;
+        case "RO":
         emocao = "Nojo";
         emoji = "🤢";
         break;
